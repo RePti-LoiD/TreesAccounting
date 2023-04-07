@@ -1,0 +1,107 @@
+﻿<Page
+    x:Class="TreesAccounting.AccountingElementView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TreesAccounting"
+    xmlns:media="using:Microsoft.UI.Xaml.Media"
+    xmlns:descriptions="using:TreesAccounting.Descriptions"
+    xmlns:elements="using:TreesAccounting.Elements"
+    xmlns:tag="using:TreesAccounting.PresentationData"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default">
+                    <media:AcrylicBrush x:Key="CustomAcrylicInAppLuminosity" TintOpacity="0.1" TintLuminosityOpacity="0.2" TintColor="SkyBlue" FallbackColor="SkyBlue" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <ScrollViewer>
+        <StackPanel Spacing="10" Padding="10">
+
+            <Grid Grid.Row="1" Height="300">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="500"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Margin="0, 0, 5, 0" CornerRadius="10" Background="{StaticResource CustomAcrylicInAppLuminosity}" x:Name="CardDataBlock">
+                    <Button VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" Height="50" Margin="5" CornerRadius="5" Click="ReturnToMain">
+                        <FontIcon Glyph="&#xE72B;"/>
+                    </Button>
+                    <StackPanel Margin="70, 15, 0, 0">
+                        <TextBlock Text="{x:Bind forestName}" HorizontalAlignment="Left" Style="{StaticResource TitleTextBlockStyle}" FontWeight="Bold" VerticalAlignment="Top"/>
+                        <TextBlock Text="Тип леса" HorizontalAlignment="Left" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Top"/>
+                    </StackPanel>
+                    <NavigationViewItemSeparator Margin="0, 75" VerticalAlignment="Top"/>
+
+                    <ScrollViewer Margin="30, 100, 30, 10" Content="{x:Bind forestDescription}"/>
+
+                </Grid>
+
+                <Grid Margin="5, 0, 0, 0" Grid.Column="1" CornerRadius="10" Background="{StaticResource CustomAcrylicInAppLuminosity}" x:Name="MainGridCard">
+                    <StackPanel Margin="20, 15, 0, 0">
+                        <TextBlock Text="{x:Bind forestPlace}" HorizontalAlignment="Left" Style="{StaticResource TitleTextBlockStyle}" FontWeight="Bold" VerticalAlignment="Top"/>
+                        <TextBlock Text="Расположение" HorizontalAlignment="Left" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Top"/>
+                    </StackPanel>
+
+                    <NavigationViewItemSeparator VerticalAlignment="Top" Margin="0, 75"/>
+
+                    <ScrollViewer Margin="30, 100, 30, 10">
+                        <StackPanel Spacing="5">
+                            <tag:Tag TagName="Координаты" Key="{x:Bind coords}"/>
+                            <tag:Tag TagName="Площадь леса" Key="{x:Bind forestSquare}"/>
+                            <tag:Tag TagName="Средняя высота леса" Key="{x:Bind avgHeight}"/>
+                            <tag:Tag TagName="Тип леса" Key="{x:Bind ForestType}"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1" Height="500">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Margin="0, 0, 5, 0" CornerRadius="10" Background="{StaticResource CustomAcrylicInAppLuminosity}">
+                    <StackPanel>
+                        <TextBlock Text="Болезни" Margin="15, 15, 0, 0" FontSize="20" FontWeight="Bold"/>
+                        <NavigationViewItemSeparator/>
+                    </StackPanel>
+
+                    <Grid Margin="0, 60, 0, 5">
+                        <ScrollViewer>
+
+                            <StackPanel x:Name="DiseaseStackPanel" HorizontalAlignment="Center" Margin="15" Spacing="5" CornerRadius="10"/>
+
+                        </ScrollViewer>
+                    </Grid>
+                </Grid>
+
+                <Grid Margin="5, 0, 0, 0" Grid.Column="1" CornerRadius="10" Background="{StaticResource CustomAcrylicInAppLuminosity}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel>
+                        <TextBlock Text="Состав" HorizontalAlignment="Left" Margin="20, 15, 0, 0" Style="{StaticResource TitleTextBlockStyle}" FontWeight="Bold" VerticalAlignment="Top"/>
+                        <TextBlock Text="Леса" HorizontalAlignment="Left" Margin="20, 0" Style="{StaticResource BodyStrongTextBlockStyle}" VerticalAlignment="Top"/>
+                        <NavigationViewItemSeparator/>
+                    </StackPanel>
+
+                    <ScrollViewer Grid.Row="1" >
+                        <StackPanel Margin="10" Spacing="5" x:Name="TypesList"/>
+                    </ScrollViewer>
+                    
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

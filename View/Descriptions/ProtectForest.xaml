@@ -1,0 +1,58 @@
+﻿<UserControl
+    x:Class="TreesAccounting.ProtectForest"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TreesAccounting"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <RichTextBlock TextWrapping="Wrap">
+            <Paragraph>
+                <Bold>
+                    <Span FontSize="20" Foreground="{StaticResource AccentTextFillColorTertiaryBrush}">К защитным лесам относятся леса</Span>
+                </Bold> , 
+                                которые являются природными объектами, имеющими особо ценное значение, и в отношении которых устанавливается особый правовой режим использования, 
+                                охраны, защиты, воспроизводства лесов.
+            </Paragraph>
+
+            <Paragraph Foreground="{StaticResource AccentTextFillColorPrimaryBrush}">
+                <LineBreak/>
+                <Bold>Выделяются следующие категории защитных лесов:</Bold>
+            </Paragraph>
+
+            <Paragraph>
+                <Bold>
+                    <Span Foreground="{StaticResource AccentTextFillColorTertiaryBrush}">1)</Span>
+                </Bold> Леса, расположенные на особо охраняемых природных территориях;
+            </Paragraph>
+
+            <Paragraph>
+                <Bold>
+                    <Span Foreground="{StaticResource AccentTextFillColorTertiaryBrush}">2)</Span>
+                </Bold> Леса, расположенные в водоохранных зонах;
+            </Paragraph>
+
+            <Paragraph>
+                <Bold>
+                    <Span Foreground="{StaticResource AccentTextFillColorTertiaryBrush}">3)</Span>
+                </Bold> Леса, выполняющие функции защиты природных и иных объектов;
+            </Paragraph>
+
+            <Paragraph>
+                <Bold>
+                    <Span Foreground="{StaticResource AccentTextFillColorTertiaryBrush}">4)</Span>
+                </Bold> Ценные леса;
+            </Paragraph>
+
+            <Paragraph>
+                <Bold>
+                    <Span Foreground="{StaticResource AccentTextFillColorTertiaryBrush}">5)</Span>
+                </Bold> Городские леса.
+            </Paragraph>
+        </RichTextBlock>
+    </Grid>
+</UserControl>

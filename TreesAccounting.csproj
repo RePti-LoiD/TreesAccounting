@@ -116,6 +116,34 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ViewModel\MainPageDataPresenter.cs" />
+    <Compile Include="View\Descriptions\ExecutableForest.xaml.cs">
+      <DependentUpon>ExecutableForest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Descriptions\ReserveForests.xaml.cs">
+      <DependentUpon>ReserveForests.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Elements\Editable\TreesDiseaseEditable.xaml.cs">
+      <DependentUpon>TreesDiseaseEditable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Elements\Editable\TreeTypeEditable.xaml.cs">
+      <DependentUpon>TreeTypeEditable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Elements\ForestCard.xaml.cs">
+      <DependentUpon>ForestCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Elements\TreesDisease.xaml.cs">
+      <DependentUpon>TreesDisease.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Elements\Tag.xaml.cs">
+      <DependentUpon>Tag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Elements\TreeType.xaml.cs">
+      <DependentUpon>TreeType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\AccountingElementView.xaml.cs">
+      <DependentUpon>AccountingElementView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -123,6 +151,15 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Descriptions\ProtectForest.xaml.cs">
+      <DependentUpon>ProtectForest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\AccountingElementViewEdit.xaml.cs">
+      <DependentUpon>AccountingElementViewEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -130,6 +167,9 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\free-icon-forest-2169330.png" />
+    <Content Include="Assets\free-icon-forest-2913520.png" />
+    <Content Include="Assets\free-icon-forest-834357.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -144,16 +184,78 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Descriptions\ExecutableForest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Descriptions\ReserveForests.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Elements\Editable\TreesDiseaseEditable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Elements\Editable\TreeTypeEditable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Elements\ForestCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Elements\TreesDisease.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Elements\Tag.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Elements\TreeType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\AccountingElementView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Descriptions\ProtectForest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pages\AccountingElementViewEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.14</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.UI.Xaml">
+      <Version>2.8.2</Version>
+    </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TreesAccounting.Core\TreesAccounting.Core.csproj">
+      <Project>{2054eee0-b1d7-4fa5-b7f5-df5cef21bdb6}</Project>
+      <Name>TreesAccounting.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
